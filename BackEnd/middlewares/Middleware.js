@@ -1,0 +1,22 @@
+const jwt = require('jsonwebtoken');
+const AuthMiddleware = async (req, res, next) => {
+    try {
+        // const header = req.header('Authorization');
+        // if (!header) {
+        //     return res.status(400).json({ msg: "Please Login to Continue" })
+        // }
+        // const token = header.split(" ")[1];
+        const token = req.cookies.token
+        if(!token){
+            return res.status(404).json({msg:"Token Unavailable"})
+        }
+        const decodedToken = jwt.verify(token, process.env.SECRET_KEY);
+        next()
+    }
+    catch (error) {
+        return res.status(401).json({ msg: "Invalid Token" })
+    }
+
+}
+
+module.exports = AuthMiddleware
