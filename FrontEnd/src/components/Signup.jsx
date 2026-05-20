@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import NavBarComponent from './NavBar';
+import { Link } from 'react-router-dom';
 
 const BGimg = styled.div`
     background-color: #1e003c;
@@ -56,9 +57,8 @@ const SignupBtn = styled.button`
     margin: 1em auto 0;
     padding: 0.8em;
     font-size: 1.1em;
-    background-color: #a200e1;
+    background-color: #74099f;
     color: white;
-    border: 2px solid #a200e1;
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
@@ -66,8 +66,8 @@ const SignupBtn = styled.button`
     font-weight: 600;
     transition: all 0.3s ease;
     &:hover {
-        background-color: #74099f;
-        box-shadow: 0 0px 12px #a200e1;
+        background-color: #a200e1;
+        box-shadow: 0 0px 12px #74099f;
         transform: scale(1.05);
         transition: all 0.3s ease;
     }
@@ -79,6 +79,20 @@ const TextContainer = styled.div`
     border-right: 2px solid #74099f;
     height: 20vw;
     padding-right: 10vh;
+`;
+const LoginDiv = styled.div`
+    margin-top: 2vh;
+    color: #ffffff;
+    text-align: center;
+`;
+
+const StyledLink = styled(Link)`
+    color: #e0d508;
+    font-weight: 500;
+    &:hover {
+        color: #fff700;
+        transition: all 0.3s ease;
+    }
 `;
 
 const Signup = () => {
@@ -122,6 +136,7 @@ const Signup = () => {
                             <Input type="password" id="confirmPassword" placeholder="Confirm Password" />
                         </FormComponent>
                         <SignupBtn type="submit">Sign Up</SignupBtn>
+                        <LoginDiv>Don't have an account? <StyledLink to="/">Login</StyledLink></LoginDiv>
                     </Form>
                 </SignupBox>
             </BGimg>

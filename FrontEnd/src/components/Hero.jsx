@@ -9,6 +9,7 @@ const Container = styled.div`
     width: 100%;
     display: flex;
     padding-top: 5vh;
+    
 `;
 
 const Quote1 = styled.h1`
@@ -18,7 +19,7 @@ const Quote1 = styled.h1`
     padding: 2rem;
     font-weight: 500;
     background: linear-gradient(90deg, #1e003c 0%, #74099f 100%);
-    margin-left: 10vh;
+    margin: 10vh 0 0 0;
     line-height: 1.2;
 `;
 
@@ -28,7 +29,7 @@ const Quote2 = styled.h1`
     font-family: Montserrat, serif;
     padding: 2rem;
     font-weight: 200;
-    margin-left: 30vh;
+    margin: 3vh 0 0 30vh;
     text-align: right;
     line-height: 1.2;
     `;
